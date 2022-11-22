@@ -22,6 +22,9 @@ language_translator.set_service_url('https://api.us-south.language-translator.wa
 
 def english_to_french(english_text):
     """Converts English text to French"""
+    if english_text == "":
+        return ""
+
     translation = language_translator.translate(
         text=english_text,
         model_id='en-fr').get_result()
@@ -32,6 +35,9 @@ def english_to_french(english_text):
 
 def french_to_english(french_text):
     """Converts French to English"""
+    if french_text == "":
+        return ""
+
     translation = language_translator.translate(
         text=french_text,
         model_id='fr-en').get_result()
